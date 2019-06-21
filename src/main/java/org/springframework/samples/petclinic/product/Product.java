@@ -10,4 +10,9 @@ import org.springframework.samples.petclinic.model.NamedEntity;
 public class Product extends NamedEntity{
 
 	private static final long serialVersionUID = 1L;
+
+	public void setDescripion(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 }
