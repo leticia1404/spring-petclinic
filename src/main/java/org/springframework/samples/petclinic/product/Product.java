@@ -1,7 +1,13 @@
 package org.springframework.samples.petclinic.product;
 
-import org.springframework.samples.petclinic.model.BaseEntity;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-public class Product extends BaseEntity{
+import org.springframework.samples.petclinic.model.NamedEntity;
 
+@Entity
+@Table(name = "products")
+public class Product extends NamedEntity{
+
+	private static final long serialVersionUID = 1L;
 }

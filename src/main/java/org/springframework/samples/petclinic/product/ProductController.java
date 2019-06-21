@@ -15,12 +15,11 @@
  */
 package org.springframework.samples.petclinic.product;
 
-import java.util.ArrayList;
+import java.util.Collection;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 
 /**
  * @author Juergen Hoeller
@@ -30,23 +29,18 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 class ProductController {
+	private ProductRepository products;
 
-	//TODO criar atributo para o repositório
-	
-	//TODO criar construtor para receber repositório
-	//mantido pelo Spring
-	
-	
-    @GetMapping("/products")
-    public String processFindForm(Model model) {
-    	
-    	ArrayList<Product> productsList = new ArrayList<Product>();
-    	model.addAttribute("products",productsList);
-    	return "products/productsList";
-    }
+	public ProductController(ProductRepository products) {
+		super();
+		this.products = products;
+	}
 
-
-
-  
+	@GetMapping("/products")
+	public String processFindForm(Model model) {
+		Collection<Product> productsList = products.findAll();
+		model.addAttribute("products", productsList);
+		return "products/productsList";
+	}
 
 }
