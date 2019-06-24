@@ -51,8 +51,9 @@ public class ProductControllerTests {
     public void setup() {
         golden = new Product();
         golden.setId(TEST_PRODUCT_ID);
-        golden.setName("Formulada com ingredientes de alta qualidade e balanceada para suprir às particularidades nutricionais dos felinos, Golden Gatos Adultos Salmão oferece sabor irresistível  e cuidados especiais com o trato urinário, garantindo assim, sabor e saúde para seu gato.");
-        golden.setDescripion("");
+        golden.setName("Golden gato adulto salmao");
+        golden.setDescription("Formulada com ingredientes de alta qualidade e balanceada para suprir às particularidades nutricionais dos felinos, Golden Gatos Adultos Salmão oferece sabor irresistível  e cuidados especiais com o trato urinário, garantindo assim, sabor e saúde para seu gato.");
+        
         //given(this.products.findById(TEST_PRODUCT_ID)).willReturn(golden);
     }
 

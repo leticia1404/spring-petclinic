@@ -11,8 +11,22 @@ public class Product extends NamedEntity{
 
 	private static final long serialVersionUID = 1L;
 
-	public void setDescripion(String string) {
-		// TODO Auto-generated method stub
-		
+	private String description;
+	private String peso;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public String getPeso() {
+		return peso;
+	}
+
+	public void setPeso(String peso) {
+		this.peso = peso;
 	}
 }

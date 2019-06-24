@@ -68,6 +68,7 @@ CREATE INDEX visits_pet_id ON visits (pet_id);
 CREATE TABLE products (
   id        INTEGER IDENTITY PRIMARY KEY,
   name      VARCHAR(80),
-  description      CLOB(5K)
+  description      CLOB(5K),
+  peso 		VARCHAR(20)
 );
 CREATE INDEX products_name ON products (name);
