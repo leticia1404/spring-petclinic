@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'products')}">
+
+  <body>
+  
+  
+    <h2>Product Information</h2>
+  
+  
+    <table class="table table-striped" th:object="${products}">
+      <tr>
+        <th>Nome</th>
+        <td><b th:text="*{name}"></b></td>
+      </tr>
+      <tr>
+        <th>Descrição</th>
+        <td th:text="*{description}" /></td>
+      </tr>
+      <tr>
+        <th>Peso</th>
+        <td th:text="*{peso}" /></td>
+      </tr>
+    </table>
+ 
+  </body>
+
+</html>

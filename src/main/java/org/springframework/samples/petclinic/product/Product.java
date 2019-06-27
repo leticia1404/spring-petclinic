@@ -1,7 +1,9 @@
 package org.springframework.samples.petclinic.product;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
 
 import org.springframework.samples.petclinic.model.NamedEntity;
 
@@ -11,7 +13,12 @@ public class Product extends NamedEntity{
 
 	private static final long serialVersionUID = 1L;
 
+	@Column(name = "description")
+    
 	private String description;
+	
+	@Column(name = "peso")
+    
 	private String peso;
 
 	public String getDescription() {

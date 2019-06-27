@@ -16,14 +16,17 @@
 package org.springframework.samples.petclinic.product;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 class ProductController {
-	private ProductRepository products;
+	private final ProductRepository products;
 
 	public ProductController(ProductRepository products) {
 		super();
@@ -36,5 +39,20 @@ class ProductController {
 		model.addAttribute("products", productsList);
 		return "products/productsList";
 	}
+	
+	@GetMapping("/products/{productId}")
+    public String showOwner(@PathVariable("productId") Integer productId, Model model) {
+        Optional<Product> mav = products.findById(productId);
+        model.addAttribute("products",mav.get());
+		return "products/productDetails";
+    }
+
+//	@GetMapping("/products/{productId}")
+//	public ModelAndView showOwner(@PathVariable("productId") int ownerId) {
+//        ModelAndView mav = new ModelAndView("products/productDetails");
+//        mav.addObject(this.products.findById(ownerId));
+//        return mav;
+//    }
+
 
 }
