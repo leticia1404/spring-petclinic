@@ -63,7 +63,16 @@
                       <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
                       <span>Products</span>
                   </li>
-  
+				  <li th:replace="::menuItem ('/login','login',${#httpServletRequest.remoteUser},'th-list','Login')">
+				  	 <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                     <span>Login</span>
+                     
+				  </li>
+				  <li>
+					  <form th:action="@{/logout}" method="post">
+	    			        <input type="submit" value="Sign Out"/>
+	      			  </form>
+				  </li>
               </ul>
           </div>
       </div>
