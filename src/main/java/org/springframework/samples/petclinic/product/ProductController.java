@@ -16,7 +16,6 @@
 package org.springframework.samples.petclinic.product;
 
 import java.util.Collection;
-import java.util.Optional;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,19 +39,20 @@ class ProductController {
 		return "products/productsList";
 	}
 	
+	
+	/*
+	 * @GetMapping("/products/{productId}") public String
+	 * showOwner(@PathVariable("productId") Integer productId, Model model) {
+	 * Optional<Product> mav = products.findById(productId);
+	 * model.addAttribute("products",mav.get()); return "products/productDetails"; }
+	 */
+	
 	@GetMapping("/products/{productId}")
-    public String showOwner(@PathVariable("productId") Integer productId, Model model) {
-        Optional<Product> mav = products.findById(productId);
-        model.addAttribute("products",mav.get());
-		return "products/productDetails";
-    }
-
-//	@GetMapping("/products/{productId}")
-//	public ModelAndView showOwner(@PathVariable("productId") int ownerId) {
-//        ModelAndView mav = new ModelAndView("products/productDetails");
-//        mav.addObject(this.products.findById(ownerId));
-//        return mav;
-//    }
+	public ModelAndView showProduct(@PathVariable("productId") int productId) {
+        ModelAndView mav = new ModelAndView("products/productDetails");
+        mav.addObject(this.products.findById(productId));
+        return mav;		
+	}
 
 
 }
