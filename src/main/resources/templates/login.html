@@ -5,13 +5,7 @@
         <title>Spring Security Example </title>
     </head>
     <body>
-       <div th:if="${#httpServletRequest.remoteUser != null}">
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
-    </div>
-    
-    <div th:if="${#httpServletRequest.remoteUser == null}">
+    <div>
         <div th:if="${param.error}">
             Invalid username and password.
         </div>    
